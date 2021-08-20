@@ -3,6 +3,7 @@ import { removeService, changeServiceField, changeEditableServiceFields, deleteE
 
 export default function ServiceList() {
   const items = useSelector((state) => state.serviceList);
+  const filter = useSelector((state) => state.serviceFilter);
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
@@ -23,13 +24,14 @@ export default function ServiceList() {
 
   return (
     <ul>
-      {items.map((item) =>
-        <li key={item.id}>
-          {item.name} - {item.price}
-          <button onClick={handleEdit(item.id)}>✎</button>
-          <button onClick={handleRemove(item.id)}>🞪</button>
-        </li>
-      )}
+      {items.filter((item) => item.name.includes(filter))
+        .map((item) =>
+          <li key={item.id}>
+            {item.name} - {item.price}
+            <button onClick={handleEdit(item.id)}>✎</button>
+            <button onClick={handleRemove(item.id)}>✖</button>
+          </li>
+        )}
     </ul>
   );
 }

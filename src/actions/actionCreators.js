@@ -1,4 +1,4 @@
-import { ADD_SERVICE, REMOVE_SERVICE, CHANGE_SERVICE_FIELD, RESET_SERVICE_FIELDS, CHANGE_EDITABLE_SERVICE_FIELDS, EDIT_SERVICE, DELETE_EDITABLE_SERVICE_FIELDS } from "./actionTypes";
+import { ADD_SERVICE, REMOVE_SERVICE, CHANGE_SERVICE_FIELD, RESET_SERVICE_FIELDS, CHANGE_EDITABLE_SERVICE_FIELDS, EDIT_SERVICE, DELETE_EDITABLE_SERVICE_FIELDS, CHANGE_FILTER_FIELD } from "./actionTypes";
 
 export function addService(name, price) {
   return { type: ADD_SERVICE, payload: { name, price } };
@@ -26,4 +26,8 @@ export function changeEditableServiceFields(id) {
 
 export function deleteEditableServiceFields(id) {
   return { type: DELETE_EDITABLE_SERVICE_FIELDS, payload: { id } };
+}
+
+export function changeFilterField(value) {
+  return { type: CHANGE_FILTER_FIELD, payload: { value } };
 }

@@ -4,6 +4,8 @@ import { ADD_SERVICE, REMOVE_SERVICE, EDIT_SERVICE } from "../actions/actionType
 const initial_state = [
   { id: nanoid(), name: 'Замена стекла', price: 21000 },
   { id: nanoid(), name: 'Замена дисплея', price: 25000 },
+  { id: nanoid(), name: 'Замена аккумулятора', price: 4000 },
+  { id: nanoid(), name: 'Замена микрофона', price: 2500 },
 ];
 
 export default function ServiceListReducer(state = initial_state, action) {
