@@ -1,2 +1,2 @@
 React Redux
-CRUD
+CRUD + Filter

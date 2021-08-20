@@ -8,7 +8,7 @@ const initial_state = [
   { id: nanoid(), name: 'Замена микрофона', price: 2500 },
 ];
 
-export default function ServiceListReducer(state = initial_state, action) {
+export default function serviceListReducer(state = initial_state, action) {
   switch (action.type) {
     case ADD_SERVICE: {
       const { name, price } = action.payload;
